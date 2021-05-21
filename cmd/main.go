@@ -23,14 +23,15 @@ func run() error {
 		return err
 	}
 
-	db, err := repository.NewPostgresDB(repository.Config{
-		Host: "db.host",
-		Port: "db.port",
-		Username: "db.username",
-		DBName: "db.dbname",
-		Password: "db.password",
-		SSLMode: "db.sslmode",
-	})
+	db_config := repository.Config{
+		Host:     viper.GetString("db.host"),
+		Port:     viper.GetString("db.port"),
+		Username: viper.GetString("db.username"),
+		DBName:   viper.GetString("db.dbname"),
+		Password: viper.GetString("db.password"),
+		SSLMode:  viper.GetString("db.sslmode"),
+	}
+	db, err := repository.NewPostgresDB(db_config)
 	if err != nil {
 		log.Fatalf("error occured while connecting to db: %s", err.Error())
 		return err
