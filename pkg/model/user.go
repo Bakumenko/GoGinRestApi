@@ -5,13 +5,11 @@ import (
 	"time"
 )
 
-type myUUID uuid.UUID
-
 type User struct {
-	ID        myUUID    `json:"id"`
-	Firstname string    `json:"firstname"`
-	Lastname  string    `json:"lastname"`
-	Email     string    `json:"email"`
-	Age       uint      `json:"age"`
-	Created   time.Time `json:"created"`
+	ID        uuid.UUID `json:"id"`
+	Firstname string    `json:"firstname" binding:"required"`
+	Lastname  string    `json:"lastname" binding:"required"`
+	Email     string    `json:"email" binding:"required"`
+	Age       uint      `json:"age" binding:"required"`
+	Created   time.Time `json:"created_at"`
 }

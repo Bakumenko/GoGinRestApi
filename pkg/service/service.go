@@ -1,9 +1,13 @@
 package service
 
-import "apiserver/pkg/repository"
+import (
+	"apiserver/pkg/model"
+	"apiserver/pkg/repository"
+	"github.com/google/uuid"
+)
 
 type User interface {
-	
+	CreateUser(user model.User) (uuid.UUID, error)
 }
 
 type Service struct {
@@ -11,5 +15,7 @@ type Service struct {
 }
 
 func NewService(repos *repository.Repository) *Service {
-	return &Service{}
+	return &Service{
+		User: NewUserService(repos.User),
+	}
 }

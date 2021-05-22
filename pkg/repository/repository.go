@@ -1,9 +1,13 @@
 package repository
 
-import "github.com/jmoiron/sqlx"
+import (
+	"apiserver/pkg/model"
+	"github.com/google/uuid"
+	"github.com/jmoiron/sqlx"
+)
 
 type User interface {
-
+	CreateUser(user model.User) (uuid.UUID, error)
 }
 
 type Repository struct {
@@ -11,5 +15,7 @@ type Repository struct {
 }
 
 func NewRepository(db *sqlx.DB) *Repository {
-	return &Repository{}
+	return &Repository{
+		User: NewUserPostgres(db),
+	}
 }
