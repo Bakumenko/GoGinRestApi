@@ -1,7 +1,7 @@
 # GoTestRestApi
 ![plot](images/go1.png)
 
-####This is test rest api application. It can create/update/delete user, get one user and get all users.
+## This is test rest api application. It can create/update/delete user, get one user and get all users.
 
 ### For create table
 `migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' up`
