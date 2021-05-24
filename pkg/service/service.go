@@ -7,6 +7,7 @@ import (
 )
 
 type User interface {
+	GetAllUsers() ([]model.User, error)
 	CreateUser(user model.User) (uuid.UUID, error)
 }
 
