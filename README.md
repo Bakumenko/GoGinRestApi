@@ -24,11 +24,16 @@ DELETE /users/:id
 
 ### Current fields of user
 ID        uuid
+
 Firstname string    
+
 Lastname  string   
+
 Email     string    
-Age       uint 
-Created   time.Time
+
+Age       int 
+
+Created   timestamp
 
 ### Used packages:
 1) sqlx for sqlx request.
