@@ -10,6 +10,26 @@
 ### For start app
 `go build apiserver/cmd`
 
+### Routes
+
+GET    /users  
+
+POST   /users   
+
+GET    /users/:id  
+
+PUT    /users/:id 
+
+DELETE /users/:id
+
+### Current fields of user
+ID        uuid
+Firstname string    
+Lastname  string   
+Email     string    
+Age       uint 
+Created   time.Time
+
 ### Used packages:
 1) sqlx for sqlx request.
    
