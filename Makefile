@@ -7,4 +7,3 @@ migrate:
 
 drop:
 	migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' drop
-.DEFAULT_GOAL := build
