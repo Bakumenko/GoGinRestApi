@@ -16,6 +16,8 @@ GET    /users
 
 POST   /users   
 
+POST   /users/admin
+
 GET    /users/:id  
 
 PUT    /users/:id 
@@ -33,7 +35,14 @@ Email     string
 
 Age       int 
 
+Role_id   int
+
 Created   timestamp
+
+### Current fields of user
+ID   serial
+
+Name string
 
 ### Used packages:
 1) sqlx for sqlx request.
@@ -63,8 +72,8 @@ Created   timestamp
 ### Configs:
 For input password from db you needed to create **.env** file with **DB_PASSWORD=** 
 
-Other configs for db is in config.yml.
+Other configs for db are in config.yml.
 
-You can change port of server in cinfig.yml too
+You can change port of server in config.yml too
 
 ![plot](images/go2.png)

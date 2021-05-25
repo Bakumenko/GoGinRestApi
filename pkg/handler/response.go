@@ -14,7 +14,7 @@ func newErrorResponse(c *gin.Context, status int, message string) {
 }
 
 type getAllUsersResponse struct {
-	Data []model.User `json:"Users"`
+	Users []model.UserOutput `json:"Users"`
 }
 
 type deleteResponse struct {

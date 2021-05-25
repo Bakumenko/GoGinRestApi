@@ -8,3 +8,4 @@ db:
   dbname: "test_db"
   sslmode: "disable"
   usertable: "users"
+  roletable: "roles"
