@@ -39,7 +39,7 @@ Role_id   int
 
 Created   timestamp
 
-### Current fields of user
+### Current fields of roles
 ID   serial
 
 Name string
