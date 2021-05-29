@@ -8,7 +8,7 @@
 ### For drop db 
 `migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' drop`
 ### For start app
-`go build apiserver/cmd`
+`go run cmd/main.go`
 
 ### Routes
 
