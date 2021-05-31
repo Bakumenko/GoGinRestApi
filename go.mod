@@ -15,6 +15,7 @@ require (
 	github.com/lib/pq v1.10.2
 	github.com/spf13/viper v1.7.1
 	github.com/streadway/amqp v1.0.0 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/subosito/gotenv v1.2.0
 	github.com/ugorji/go v1.2.6 // indirect
 	golang.org/x/crypto v0.0.0-20210513164829-c07d793c2f9a // indirect
