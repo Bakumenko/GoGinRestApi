@@ -30,7 +30,7 @@ func run() error {
 		return err
 	}
 
-	db_config := pkg.Config{
+	dbConfig := pkg.Config{
 		Host:     viper.GetString("db.host"),
 		Port:     viper.GetString("db.port"),
 		Username: viper.GetString("db.username"),
@@ -38,7 +38,7 @@ func run() error {
 		Password: os.Getenv("DB_PASSWORD"),
 		SSLMode:  viper.GetString("db.sslmode"),
 	}
-	db, err := pkg.NewPostgresDB(db_config)
+	db, err := pkg.NewPostgresDB(dbConfig)
 	if err != nil {
 		log.Fatalf("error occured while connecting to db: %s", err.Error())
 		return err

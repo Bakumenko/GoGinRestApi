@@ -7,3 +7,6 @@ migrate:
 
 drop:
 	migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' drop
+
+generate_mock_service:
+	mockgen -source=pkg/service/service.go -destination=pkg/service/mocks/mock.go
