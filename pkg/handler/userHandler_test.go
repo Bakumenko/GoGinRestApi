@@ -5,6 +5,7 @@ import (
 	"apiserver/pkg/service"
 	mock_service "apiserver/pkg/service/mocks"
 	"bytes"
+	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
@@ -26,7 +27,7 @@ func TestUserHandler_createUser(t *testing.T) {
 		expectedRequestBody string
 	}{
 		{
-			name:      "OK",
+			name:      "check data is true",
 			inputBody: `{"firstname": "TestFN", "lastname": "TestLN", "email": "test@test.com", "age": 25}`,
 			inputUser: model.User{
 				Firstname: "TestFN",
@@ -38,7 +39,22 @@ func TestUserHandler_createUser(t *testing.T) {
 				s.EXPECT().CreateUser(user, roleName).Return(id, nil)
 			},
 			expectedStatusCode:  200,
-			expectedRequestBody: "{\"id\":\"" + id.String() + "\"}", //fmt.Sprintf("{\"id\":%d}", id),
+			expectedRequestBody: "{\"id\":\"" + id.String() + "\"}",
+		},
+		{
+			name:      "check email for free",
+			inputBody: `{"firstname": "TestFN", "lastname": "TestLN", "email": "test@test.com", "age": 25}`,
+			inputUser: model.User{
+				Firstname: "TestFN",
+				Lastname:  "TestLN",
+				Email:     "test@test.com",
+				Age:       25,
+			},
+			mockBehavior: func(s *mock_service.MockUser, user model.User, roleName string) {
+				s.EXPECT().CreateUser(user, roleName).Return(uuid.Nil, errors.New("email is already contains"))
+			},
+			expectedStatusCode:  500,
+			expectedRequestBody: "{\"message\":\"email is already contains\"}",
 		},
 	}
 
