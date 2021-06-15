@@ -16,37 +16,37 @@
 
 ### Routes
 
-GET    /users  
+`GET    /users`
 
-POST   /users   
+`POST   /users`   
 
-POST   /users/admin
+`POST   /users/admin`
 
-GET    /users/:id  
+`GET    /users/:id`  
 
-PUT    /users/:id 
+`PUT    /users/:id` 
 
-DELETE /users/:id
+`DELETE /users/:id`
 
 ### Current fields of user
-ID        uuid
+`ID        uuid`
 
-Firstname string    
+`Firstname string`    
 
-Lastname  string   
+`Lastname  string`   
 
-Email     string    
+`Email     string`    
 
-Age       int 
+`Age       int` 
 
-Role_id   int
+`Role_id   int`
 
-Created   timestamp
+`Created   timestamp`
 
 ### Current fields of roles
-ID   serial
+`ID   serial`
 
-Name string
+`Name string`
 
 ### Used packages:
 1) sqlx for sqlx request.
