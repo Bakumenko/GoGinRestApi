@@ -4,11 +4,15 @@
 ## This is test rest api application. It can create/update/delete user, get one user and get all users.
 
 ### For create table
-`migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' up`
+`make migrate`
 ### For drop db 
-`migrate -path ./db/migration -database 'postgres://postgres@localhost:5432/postgres?sslmode=disable' drop`
+`make drop`
+
+### For build proj
+`make build`
+
 ### For start app
-`go run cmd/main.go`
+`make run`
 
 ### Routes
 
