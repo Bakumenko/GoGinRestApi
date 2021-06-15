@@ -5,7 +5,7 @@ db:
   host: "localhost"
   port: "5432"
   username: "postgres"
-  dbname: "test_db"
+  dbname: "gotest_db"
   sslmode: "disable"
   usertable: "users"
   roletable: "roles"
